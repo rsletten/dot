@@ -1,0 +1,8 @@
+cd ~/.vim
+git submodule add https://github.com/Lokaltog/vim-easymotion.git bundle/easymotion
+git add .
+git commit -m "Installed EasyMotion plugin"
+git push
+
+cd ~/.vim
+git submodule foreach git pull origin master

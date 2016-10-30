@@ -1,0 +1,26 @@
+execute pathogen#infect()
+syntax on
+set t_Co=256
+filetype on
+filetype indent on
+filetype plugin on
+set nocompatible
+set expandtab
+set tabstop=2 shiftwidth=2 softtabstop=2
+set autoindent
+
+" color
+set background=dark
+colorscheme vividchalk
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+" autocmd vimenter * if !argc() | NERDTree | endif
+
+" powerline
+" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set laststatus=2
+
+" syntastic
+let g:syntastic_check_on_open = 1
+let g:airline#extensions#syntastic#enabled = 1

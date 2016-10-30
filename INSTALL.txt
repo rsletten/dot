@@ -1,0 +1,31 @@
+git clone http://github.com/rsletten/dotfiles ~/dotfiles
+git clone https://github.com/rsletten/oh-my-zsh ~/.oh-my-zsh
+cd ~/dotfiles
+git pull && git submodule init && git submodule update && git submodule status
+ln -s ~/dotfiles/robs.zsh-theme ~/.oh-my-zsh/themes
+ln -s ~/dotfiles/vim ~/.vim
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/Xwinrc ~/.Xwinrc
+ln -s ~/dotfiles/startxwinrc ~/.startxwinrc
+ln -s ~/dotfiles/gitconfig ~/.gitconfig
+
+# for ssh public key
+git remote set-url origin git@github.com:rsletten/dotfiles.git
+
+# for https
+git remote set-url origin https://github.com/rsletten/dotfiles.git
+
+# adding a vim module
+cd dotfiles
+git submodule add https://github.com/scrooloose/syntastic.git vim/bundle/syntastic
+git commit -a
+git push
+
+# removing a vim module
+cd dotfiles
+git submodule deinit vim/bundle/vim-puppet
+rmdir vim/bundle/vim-puppet
+git commit -a
+git push
