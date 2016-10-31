@@ -1,0 +1,7 @@
+BoldAsFont=no
+Term=xterm-256color
+Scrollbar=none
+Transparency=high
+OpaqueWhenFocused=yes
+ClicksPlaceCursor=no
+Font=Menlo for Powerline
