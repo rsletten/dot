@@ -77,3 +77,4 @@ function validate_erb() {
 export VAGRANT_SERVER_URL="http://softwarelibrary.wellsfargo.com:12080/mrc-packages"
 #export BUNSEN_PUPPET_VERSION=2016.1
 source ~/.iterm2_shell_integration.`basename $SHELL`
+export EDITOR=vim
