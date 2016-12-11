@@ -58,10 +58,11 @@ plugins=(git osx sublime brew history history-substring-search)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+export PATH=~/bin:/usr/local/bin:$PATH:~/mark/home/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 export http_proxy=http://proxy.wellsfargo.com:8080
 export https_proxy=http://proxy.wellsfargo.com:8080
+export no_proxy=wellsfargo.com,wellsfargo.net,ent.wfb.bank.corp
 
 function validate_yaml() {
   ruby -ryaml -e "YAML.load_file '$1'"
@@ -74,4 +75,5 @@ function validate_erb() {
 }
 
 export VAGRANT_SERVER_URL="http://softwarelibrary.wellsfargo.com:12080/mrc-packages"
-export BUNSEN_PUPPET_VERSION=2016.1
+#export BUNSEN_PUPPET_VERSION=2016.1
+source ~/.iterm2_shell_integration.`basename $SHELL`
