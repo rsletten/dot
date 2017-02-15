@@ -78,3 +78,4 @@ export VAGRANT_SERVER_URL="http://softwarelibrary.wellsfargo.com:12080/mrc-packa
 #export BUNSEN_PUPPET_VERSION=2016.1
 source ~/.iterm2_shell_integration.`basename $SHELL`
 export EDITOR=vim
+nova() { command nova --insecure "$@" 2> /dev/null }
