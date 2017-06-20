@@ -53,19 +53,30 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx sublime brew history history-substring-search)
+plugins=(git osx sublime brew history history-substring-search pip python ruby pyenv virtualenv virtualenvwrapper rvm gem github jira repo vagrant tmux tmuxinator ssh-agent screen copyfile copydir colorize extract dirpersist)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
-#export http_proxy=http://proxy.wellsfargo.com:8080
+export PATH=~/bin:/usr/local/bin:$PATH:~/mark/home/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export http_proxy=http://proxy:8080
+#export https_proxy=http://proxy:8080
+#export no_proxy=rsletten.com
 
-# archey
-if [ -f /usr/local/bin/archey ]; then
-  /usr/local/bin/archey
-fi
-export HOMEBREW_GITHUB_API_TOKEN=ab4acb542b5affc0dad73b70aa440e013135d8f9
+function validate_yaml() {
+  ruby -ryaml -e "YAML.load_file '$1'"
+}
+function reyaml() {
+  ruby -ryaml -e "print YAML.load_file('$1').to_yaml"
+}
+function validate_erb() {
+  erb -P -x -T '-' $1 | ruby -c
+}
+
+source ~/.iterm2_shell_integration.`basename $SHELL`
+export EDITOR=vim
+nova() { command nova --insecure "$@" 2> /dev/null }
+unset LESS
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
