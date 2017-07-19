@@ -14,6 +14,7 @@ ZSH_THEME="agnoster"
 alias vi=vim
 
 if [ `uname` = "Darwin" ]; then
+  source ~/.iterm2_shell_integration.`basename $SHELL`
 	#alias vim=mvim
 fi
 
@@ -74,7 +75,6 @@ function validate_erb() {
   erb -P -x -T '-' $1 | ruby -c
 }
 
-source ~/.iterm2_shell_integration.`basename $SHELL`
 export EDITOR=vim
 nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
