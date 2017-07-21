@@ -80,3 +80,4 @@ nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
+source ${(q-)PWD}/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
