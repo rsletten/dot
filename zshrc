@@ -15,6 +15,7 @@ alias vi=vim
 
 if [ `uname` = "Darwin" ]; then
   source ~/.iterm2_shell_integration.`basename $SHELL`
+  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 	#alias vim=mvim
 fi
 
