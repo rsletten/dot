@@ -82,9 +82,9 @@ export EDITOR=vim
 nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
 source ${(q-)PWD}/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH="$HOME/.rbenv/bin:$PATH"
 # init rbenv
 if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 # init pyenv
