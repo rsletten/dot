@@ -16,6 +16,8 @@ alias vi=vim
 if [ `uname` = "Darwin" ]; then
   source ~/.iterm2_shell_integration.`basename $SHELL`
 	#alias vim=mvim
+  export PATH="/usr/local/opt/curl/bin:$PATH"
+  export PATH="/usr/local/opt/sqlite/bin:$PATH"
 fi
 
 if [ `uname` = "CYGWIN_NT-6.1" ]; then
@@ -54,7 +56,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx sublime brew history history-substring-search pip python ruby pyenv virtualenv virtualenvwrapper rvm gem github jira repo vagrant tmux tmuxinator ssh-agent screen copyfile copydir colorize extract dirpersist)
+plugins=(git osx sublime brew history history-substring-search pip python ruby pyenv virtualenv rbenv gem github jira repo vagrant tmux tmuxinator ssh-agent screen copyfile copydir colorize extract dirpersist)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,6 +80,16 @@ function validate_erb() {
 export EDITOR=vim
 nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
 source ${(q-)PWD}/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="$HOME/.rbenv/bin:$PATH"
+# init rbenv
+if [ -d "$HOME/.rbenv" ]; then
+  eval "$(rbenv init -)"
+fi
+# init pyenv
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+umask 022
