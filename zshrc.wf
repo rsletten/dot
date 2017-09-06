@@ -82,5 +82,5 @@ nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/Users/a231677/.gem/ruby/2.4.0/bin:$PATH"
+export PATH="/usr/local/opt/ruby@2.3/bin:/Users/a231677/.gem/ruby/2.3.0/bin:/Users/a231677/.gem/ruby/2.4.0/bin:$PATH"
 source ${(q-)PWD}/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
