@@ -18,7 +18,9 @@ if [ `uname` = "Darwin" ]; then
   export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 	#alias vim=mvim
   export PATH="/usr/local/opt/curl/bin:$PATH"
-  export PATH="/usr/local/opt/sqlite/bin:$PATH"
+  if [ -f "/usr/local/bin/archey" ]; then
+    /usr/local/bin/archey
+  fi
 fi
 
 if [ `uname` = "CYGWIN_NT-6.1" ]; then
@@ -62,7 +64,7 @@ plugins=(git osx sublime brew history history-substring-search pip python ruby p
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:$PATH:~/mark/home/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+export PATH=~/bin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
 #export http_proxy=http://proxy:8080
 #export https_proxy=http://proxy:8080
