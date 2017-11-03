@@ -96,3 +96,5 @@ if [ -d "$HOME/.pyenv" ]; then
   eval "$(pyenv init -)"
 fi
 umask 022
+HISTSIZE=1000000
+SAVEHIST=1000000
