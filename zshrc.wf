@@ -54,16 +54,16 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx sublime brew history history-substring-search pip python ruby pyenv virtualenv virtualenvwrapper rvm gem github jira repo vagrant tmux tmuxinator ssh-agent screen copyfile copydir colorize extract dirpersist)
+plugins=(git osx sublime brew history history-substring-search pip python ruby rbenv pyenv virtualenv gem github jira repo vagrant tmux tmuxinator ssh-agent screen copyfile copydir colorize extract dirpersist)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:$PATH:~/mark/home/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+export PATH=~/bin:/usr/local/bin:$PATH:~/mark/home/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
-export http_proxy=http://proxy.wellsfargo.com:8080
-export https_proxy=http://proxy.wellsfargo.com:8080
-export no_proxy=wellsfargo.com,wellsfargo.net,ent.wfb.bank.corp
+#export http_proxy=http://proxy.wellsfargo.com:8080
+#export https_proxy=http://proxy.wellsfargo.com:8080
+#export no_proxy=wellsfargo.com,wellsfargo.net,ent.wfb.bank.corp
 
 function validate_yaml() {
   ruby -ryaml -e "YAML.load_file '$1'"
@@ -80,7 +80,32 @@ export BUNSEN_PUPPET_VERSION=2016.4
 export EDITOR=vim
 nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
-export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH="/usr/local/opt/ruby@2.3/bin:/Users/a231677/.gem/ruby/2.3.0/bin:/Users/a231677/.gem/ruby/2.4.0/bin:$PATH"
+export PATH="/Users/a231677/.gem/ruby/2.2.0/bin:/usr/local/opt/openssl/bin:$PATH"
 source ${(q-)PWD}/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# init rbenv
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+# init pyenv
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+function proxy_on() {
+  export https_proxy=http://proxy.wellsfargo.com:8080
+  export http_proxy=$https_proxy
+  export HTTPS_PROXY=http://proxy.wellsfargo.com:8080
+  export HTTP_PROXY=$http_proxy
+  export no_proxy="192.168.99.100,localhost,127.0.0.0/8"
+}
+function proxy_off() {
+  unset https_proxy=http://proxy.wellsfargo.com:8080
+  unset http_proxy=$https_proxy
+  unset HTTPS_PROXY=http://proxy.wellsfargo.com:8080
+  unset HTTP_PROXY=$http_proxy
+  unset no_proxy="192.168.99.100,localhost,127.0.0.0/8"
+}
+proxy_off
+export PATH="/usr/local/opt/curl/bin:$PATH"
