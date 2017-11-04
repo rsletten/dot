@@ -1,3 +1,4 @@
+ln -s ~/dot/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 git clone http://github.com/rsletten/dot ~/dot
 git clone https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
