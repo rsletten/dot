@@ -1,3 +1,4 @@
+ln -s ~/dot/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 git clone http://github.com/rsletten/dot ~/dot
 git clone https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
@@ -7,7 +8,7 @@ ln -s ~/dot/robs.zsh-theme ~/.oh-my-zsh/themes
 ln -s ~/dot/vim ~/.vim
 ln -s ~/dot/vimrc ~/.vimrc
 ln -s ~/dot/zshrc ~/.zshrc
-ln -s ~/.tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/dot/tmux.conf.local ~/.tmux.conf.local
 ln -s ~/dot/Xwinrc ~/.Xwinrc
 ln -s ~/dot/startxwinrc ~/.startxwinrc
