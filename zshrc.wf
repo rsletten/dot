@@ -1,4 +1,9 @@
- # Path to your oh-my-zsh configuration.
+#tmux attach &> /dev/null
+
+#if [[ ! $TERM =~ screen ]]; then
+#    exec tmux
+#fi
+# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -81,7 +86,7 @@ export EDITOR=vim
 nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
 export PATH="/Users/a231677/.gem/ruby/2.2.0/bin:/usr/local/opt/openssl/bin:$PATH"
-source ${(q-)PWD}/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # init rbenv
 if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
