@@ -30,6 +30,10 @@ if [ `uname` = "CYGWIN_NT-6.1" ]; then
   export PATH=$PATH:/cygdrive/c/puppet/bin/
 fi
 
+if [[ `uname -r` == *"Microsoft"* ]]; then
+  export TERM=xterm-256color
+fi
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
