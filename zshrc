@@ -102,3 +102,4 @@ fi
 umask 022
 HISTSIZE=1000000
 SAVEHIST=1000000
+alias mux="tmuxinator"
