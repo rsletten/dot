@@ -43,11 +43,18 @@ root: ~/
 # post: tmux -CC attach -t Rob
 
 windows:
-  - main:
-  - 2: 
+  - 1:
+  - 2:
       layout: vertical
       panes:
         - 
         - 
   - 3: 
+      layout: tiled
+      panes:
+        - 
+        - 
+        - 
+        - 
   - 4: 
+  - 5: 
