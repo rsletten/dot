@@ -10,6 +10,7 @@ ln -s ~/dot/vimrc ~/.vimrc
 ln -s ~/dot/zshrc ~/.zshrc
 ln -s ~/.tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/dot/tmux.conf.local ~/.tmux.conf.local
+ln -s ~/dot/tmuxinator ~/.tmuxinator
 ln -s ~/dot/Xwinrc ~/.Xwinrc
 ln -s ~/dot/startxwinrc ~/.startxwinrc
 ln -s ~/dot/gitconfig ~/.gitconfig

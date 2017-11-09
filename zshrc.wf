@@ -114,3 +114,4 @@ function proxy_off() {
 }
 proxy_off
 export PATH="/usr/local/opt/curl/bin:$PATH"
+alias mux="tmuxinator"
