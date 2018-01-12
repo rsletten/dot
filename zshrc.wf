@@ -85,7 +85,7 @@ export BUNSEN_PUPPET_VERSION=2016.4
 export EDITOR=vim
 nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
-export PATH="/Users/a231677/.gem/ruby/2.2.0/bin:/usr/local/opt/openssl/bin:$PATH"
+export PATH="/Users/a231677/.gem/ruby/2.3.0/bin:/usr/local/opt/openssl/bin:$PATH"
 source ~/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # init rbenv
 if [ -d "$HOME/.rbenv" ]; then
