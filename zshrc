@@ -87,7 +87,7 @@ function validate_erb() {
 export EDITOR=vim
 nova() { command nova --insecure "$@" 2> /dev/null }
 unset LESS
-source ~/dot/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # init rbenv
 if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
