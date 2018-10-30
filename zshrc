@@ -14,12 +14,14 @@ ZSH_THEME="agnoster"
 alias vi=vim
 
 if [ `uname` = "Darwin" ]; then
-  source ~/.iterm2_shell_integration.`basename $SHELL`
+  if [ -f "~/.iterm2_shell_integration" ]; then
+    source ~/.iterm2_shell_integration.`basename $SHELL`
+  fi
   export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
 	#alias vim=mvim
   export PATH="/usr/local/opt/curl/bin:$PATH"
   if [ -f "/usr/local/bin/archey" ]; then
-    /usr/local/bin/archey
+    /usr/local/bin/archey -o 
   fi
 fi
 
