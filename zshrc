@@ -21,7 +21,11 @@ if [ `uname` = "Darwin" ]; then
 	#alias vim=mvim
   export PATH="/usr/local/opt/curl/bin:$PATH"
   if [ -f "/usr/local/bin/archey" ]; then
-    /usr/local/bin/archey -o 
+    if [ -f "$HOME/.archey-ip" ]; then
+      /usr/local/bin/archey
+    else
+      /usr/local/bin/archey -o
+    fi
   fi
 fi
 
