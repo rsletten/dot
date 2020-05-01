@@ -11,7 +11,7 @@ filetype on
 filetype indent on
 filetype plugin on
 set nocompatible
-set mouse=a
+" set mouse=a
 set expandtab
 set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
@@ -28,3 +28,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " end syntastic
+" ansible
+autocmd FileType yaml setlocal ai ts=2 sw=2 et nun cuc
+autocmd FileType yaml colo desert
