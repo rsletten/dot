@@ -105,6 +105,10 @@ if [ -d "$HOME/.pyenv" ]; then
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
+if [ -d "$HOME/.crc" ]; then
+  export PATH="/home/rsletten/.crc/bin/oc:$PATH"
+  eval $(crc oc-env)
+fi
 umask 022
 HISTSIZE=1000000
 SAVEHIST=1000000
