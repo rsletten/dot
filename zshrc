@@ -103,6 +103,7 @@ fi
 if [ -d "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
+  alias pip3=pip
   eval "$(pyenv init -)"
 fi
 if [ -d "$HOME/.crc" ]; then
