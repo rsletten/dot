@@ -106,9 +106,10 @@ if [ -d "$HOME/.pyenv" ]; then
   alias pip3=pip
   eval "$(pyenv init -)"
 fi
+# CRC Config
 if [ -d "$HOME/.crc" ]; then
-  export PATH="/home/rsletten/.crc/bin/oc:$PATH"
-  eval $(crc oc-env)
+  export PATH="$HOME/.crc/bin/oc:$PATH"
+  [[ -f crc ]] && eval $(crc oc-env)
 fi
 umask 022
 HISTSIZE=1000000
