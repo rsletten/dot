@@ -114,4 +114,5 @@ fi
 umask 022
 HISTSIZE=1000000
 SAVEHIST=1000000
+setopt hist_ignore_all_dups
 alias mux="tmuxinator"
