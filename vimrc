@@ -29,5 +29,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " end syntastic
 " ansible
-autocmd FileType yaml setlocal ai ts=2 sw=2 et nun cuc
+autocmd FileType yaml setlocal ai ts=2 sw=2 et
 autocmd FileType yaml colo desert
