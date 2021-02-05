@@ -1,10 +1,10 @@
-ln -s ~/dotfiles/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 git clone http://github.com/rsletten/dotfiles ~/dotfiles
 git clone https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 cd ~/dotfiles
 git pull && git submodule init && git submodule update && git submodule status
 ln -s ~/dotfiles/robs.zsh-theme ~/.oh-my-zsh/themes
+ln -s ~/dotfiles/cobalt2.zsh-theme ~/.oh-my-zsh/themes
 ln -s ~/dotfiles/vim ~/.vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
@@ -14,6 +14,13 @@ ln -s ~/dotfiles/tmuxinator ~/.tmuxinator
 ln -s ~/dotfiles/Xwinrc ~/.Xwinrc
 ln -s ~/dotfiles/startxwinrc ~/.startxwinrc
 ln -s ~/dotfiles/gitconfig ~/.gitconfig
+
+
+git clone https://github.com/powerline/fonts
+cd fonts
+./install.sh
+pip install --user powerline-status
+
 
 # for ssh public key
 git remote set-url origin git@github.com:rsletten/dotfiles.git
