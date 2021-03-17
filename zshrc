@@ -117,3 +117,24 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 setopt hist_ignore_all_dups
 alias mux="tmuxinator"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+# K8S stuff
+alias k=kubectl
+alias ka='kubectl apply -f'
+alias kd='kubectl delete -f'
+alias kg='kubectl get'
+alias kx='kubectl exec -i -t'
+function get_kubernetes_context()
+{
+  CONTEXT=$(kubectl config current-context 2>/dev/null)
+  KUBE_SYMBOL=$'\xE2\x8E\x88 '
+  if [ -n "$CONTEXT" ]; then
+    NAMESPACE=$(kubectl config view --minify --output 'jsonpath={..namespace}')
+    if [ -n "$NAMESPACE" ]; then
+      echo "(${KUBE_SYMBOL} ${CONTEXT} :: ${NAMESPACE})"
+    else
+      echo "(${KUBE_SYMBOL} ${CONTEXT}:None)"
+    fi
+ fi
+}
