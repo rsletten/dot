@@ -125,6 +125,8 @@ alias ka='kubectl apply -f'
 alias kd='kubectl delete -f'
 alias kg='kubectl get'
 alias kx='kubectl exec -i -t'
+alias kk='export KUBECONFIG=~/.kube/config.k8s'
+alias koc='export KUBECONFIG=~/.kube/config.openshift'
 function get_kubernetes_context()
 {
   CONTEXT=$(kubectl config current-context 2>/dev/null)
