@@ -156,3 +156,6 @@ function refresh-all-pods() {
   done
   echo
 }
+function ksn() {
+  kubectl config set-context --current --namespace=$1
+}
