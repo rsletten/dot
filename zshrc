@@ -159,3 +159,12 @@ function refresh-all-pods() {
 function ksn() {
   kubectl config set-context --current --namespace=$1
 }
+function kge() {
+  kubectl get events --sort-by='.metadata.creationTimestamp' -A
+}
+if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
+	. /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if [ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  . /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
