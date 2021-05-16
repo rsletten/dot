@@ -168,7 +168,9 @@ fi
 if [ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   . /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+if [ -f /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh ]; then
+  . /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+fi
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
