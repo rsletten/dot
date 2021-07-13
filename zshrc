@@ -173,4 +173,10 @@ if [ -f /usr/local/share/zsh-history-substring-search/zsh-history-substring-sear
 fi
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
+    autoload -Uz compinit
+    compinit
+fi
+[ -f ~/dotfiles/.kubectl_aliases ] && source ~/dotfiles/.kubectl_aliases
